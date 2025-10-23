@@ -1,0 +1,20 @@
+{
+  "name": "anybol-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n WEB,API -c green,cyan \"pnpm --filter @anybol/web dev\" \"php -S 127.0.0.1:8080 -t apps/api/public\"",
+    "build": "pnpm -r build",
+    "lint": "pnpm --filter @anybol/web lint",
+    "format": "pnpm --filter @anybol/web format",
+    "dev:docker": "docker compose up --build",
+    "down:docker": "docker compose down -v"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

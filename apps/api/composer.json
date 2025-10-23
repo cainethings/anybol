@@ -1,0 +1,13 @@
+{
+  "name": "anybol/api",
+  "description": "Anybol PHP API (Phase 0 skeleton)",
+  "type": "project",
+  "require": {
+    "php": ">=8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Anybol\\": "src/"
+    }
+  }
+}
